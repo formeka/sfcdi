@@ -14,6 +14,12 @@ Connexion : `symfony console make:user`
 
 Authentification : `symfony console make:auth`
 
+Faire la migration en 2 étapes : migration et migrate :
+
+Migration : `symfony console doctrine:migrations:diff` ou `symfony console make:migration`
+
+Migrate : `symfony console doctrine:migrations:migrate`
+
 # FOAD Symfony
 
 ## Projet
