@@ -13,13 +13,17 @@
     </head>
     <body>
         {% block header %}
+        <header>
             {% include "partials/_nav_header.html.twig" %}
+            </header>
         {% endblock %}
 
         {% block body %}{% endblock %}
 
         {% block footer %}
+        <footer>
             {% include "partials/_nav_footer.html.twig" %}
+            </footer>
         {% endblock %}
     </body>
 </html>

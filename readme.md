@@ -24,6 +24,8 @@ Migrate : `symfony console doctrine:migrations:migrate`
 
 Lister toutes les routes : `symfony console debug:router`
 
+---
+
 # FOAD Symfony
 
 ## Projet
