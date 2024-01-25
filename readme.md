@@ -20,6 +20,10 @@ Migration : `symfony console doctrine:migrations:diff` ou `symfony console make:
 
 Migrate : `symfony console doctrine:migrations:migrate`
 
+# Les routes
+
+Lister toutes les routes : `symfony console debug:router`
+
 # FOAD Symfony
 
 ## Projet
