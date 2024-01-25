@@ -24,6 +24,20 @@ Migrate : `symfony console doctrine:migrations:migrate`
 
 Lister toutes les routes : `symfony console debug:router`
 
+# Gestion des livres
+
+Ajout d'une entité **livre** : `symfony console make:entity`
+
+Création d'un **crud** pour l'entité **livre** : `symfony console make:crud`
+
+# Génération d'un diagramme de vos entitées
+
+Installer : `composer require jawira/doctrine-diagram-bundle --dev`
+
+Do you want to execute this recipe? Y
+
+Générer un diagrame : `symfony console doctrine:diagram`
+
 ---
 
 # FOAD Symfony
