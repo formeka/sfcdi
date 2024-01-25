@@ -1,3 +1,19 @@
+# Connexion à la base de donnée
+
+Copier le fichier **.env** en **.env.local**.
+
+On renseigne les informations de notre base de donnée : `DATABASE_URL="mysql://root:@127.0.0.1:3306/cdi?serverVersion=10.4.28-MariaDB&charset=utf8mb4"`
+
+Créer la base de donnée avec **symfony** : `symfony console doctrine:database:create` ou `symfony console d:d:c`
+
+# Inscription , connexion et authentification pour un étudiant
+
+Inscription : `symfony console make:registration-form`
+
+Connexion : `symfony console make:user`
+
+Authentification : `symfony console make:auth`
+
 # FOAD Symfony
 
 ## Projet
