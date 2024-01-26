@@ -48,6 +48,14 @@ Charger les **fixtures** en supprimant le contenu de la table **livre** : `symfo
 
 Ajouter des **fixtures** sans vider la table **livre** :  `symfony console doctrine:fixture:load --append`
 
+# Relation
+
+## ManyToMany
+
+```
+symfony console make:entity
+enttité : Livre
+nouveaux champ de relation : genre
 ---
 
 # FOAD Symfony
