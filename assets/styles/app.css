@@ -23,3 +23,11 @@ footer nav ul {
 a {
   color: rgb(49, 95, 180);
 } */
+
+.genre::after {
+  content: ',';
+ }
+
+.genre:last-of-type::after {
+  content: '';
+}

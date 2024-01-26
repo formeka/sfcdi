@@ -39,6 +39,14 @@
                 <th>Resume</th>
                 <td>{{ livre.resume }}</td>
             </tr>
+            <tr>
+                <th>Genre</th>
+                <td>
+                    {% for genre in livre.genre %}
+                        <span class="genre">{{ genre.nom }}</span>
+                    {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
