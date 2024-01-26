@@ -38,6 +38,16 @@ Do you want to execute this recipe? Y
 
 Générer un diagrame : `symfony console doctrine:diagram`
 
+# Fixtures 
+
+Installer **doctrine-fixtures-bundle** et **fakerphp/faker** : `composer require --dev doctrine/doctrine-fixtures-bundle fakerphp/faker`
+
+Ajouter de fausses données pour l'entitée **livre**.
+
+Charger les **fixtures** en supprimant le contenu de la table **livre** : `symfony console doctrine:fixture:load` ou  `symfony console doctrine:fixture:load --no-interaction`
+
+Ajouter des **fixtures** sans vider la table **livre** :  `symfony console doctrine:fixture:load --append`
+
 ---
 
 # FOAD Symfony
