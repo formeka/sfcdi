@@ -4,8 +4,10 @@ namespace App\Form;
 
 use App\Entity\Genre;
 use App\Entity\Livre;
+use App\Repository\GenreRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -25,6 +27,7 @@ class LivreType extends AbstractType
                 'class' => Genre::class,
                 'choice_label' => 'nom',
                 'multiple' => true,
+                'expanded' => true,
             ])
         ;
     }
