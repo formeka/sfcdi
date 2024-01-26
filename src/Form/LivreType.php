@@ -19,6 +19,7 @@ class LivreType extends AbstractType
             ->add('date_publication')
             ->add('image')
             ->add('resume')
+            ->add('genre')
         ;
     }
 
