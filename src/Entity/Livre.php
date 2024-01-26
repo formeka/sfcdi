@@ -35,10 +35,6 @@ class Livre
     #[ORM\Column(type: Types::TEXT)]
     private ?string $resume = null;
 
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Genre $genre = null;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -128,15 +124,4 @@ class Livre
         return $this;
     }
 
-    public function getGenre(): ?Genre
-    {
-        return $this->genre;
-    }
-
-    public function setGenre(?Genre $genre): static
-    {
-        $this->genre = $genre;
-
-        return $this;
-    }
 }
