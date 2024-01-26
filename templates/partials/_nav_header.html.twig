@@ -10,6 +10,8 @@
     {% endif %}
     {% if is_granted('ROLE_ADMIN') %}
         <li><a href="{{ path('app_home_access') }}">Secret</a></li>
+        <li><a href="{{ path('app_livre_index') }}">CRUD Livre</a></li>
+        <li><a href="{{ path('app_genre_index') }}">CRUD Genre</a></li>
     {% endif %}
     
 </ul>
