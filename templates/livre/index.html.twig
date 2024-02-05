@@ -5,6 +5,15 @@
 {% block body %}
     <h1>Livre index</h1>
 
+{% for messages in app.flashes %}
+	{% for message in messages %}
+		<div class="flash-notice">
+			{{ message }}
+		</div>
+	{% endfor %}
+{% endfor %}
+
+
     <table class="table">
         <thead>
             <tr>

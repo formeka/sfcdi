@@ -50,6 +50,11 @@ class LivreController extends AbstractController
             $entityManager->persist($livre);
             $entityManager->flush();
 
+            $this->addFlash(
+                'ajoutLivre',
+                'Votre livre "'. $livre->getTitre()  . '" a été ajouté.'
+            );
+
             return $this->redirectToRoute('app_livre_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -91,10 +96,12 @@ class LivreController extends AbstractController
             endif;
              
             $entityManager->persist($livre);
-
-            
-            
             $entityManager->flush();
+
+            $this->addFlash(
+                'editLivre',
+                'Votre livre "'. $livre->getTitre()  . '" a bien été modifié.'
+            );
 
             return $this->redirectToRoute('app_livre_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -111,8 +118,14 @@ class LivreController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$livre->getId(), $request->request->get('_token'))) {
             $entityManager->remove($livre);
             $entityManager->flush();
+
+            $this->addFlash(
+                'delLivre',
+                'Votre livre "'. $livre->getTitre()  . '" a bien été supprimé !'
+            );
+
         }
 
-        return $this->redirectToRoute('app_livre_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_livre_index', [], Response::HTTP_SEE_OTHER);
     }
 }
