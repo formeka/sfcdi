@@ -37,7 +37,7 @@ class Livre
     #[ORM\Column(type: Types::TEXT)]
     private ?string $resume = null;
 
-    #[ORM\OneToMany(mappedBy: 'livre', targetEntity: Genre::class)]
+    #[ORM\ManyToMany(targetEntity: Genre::class, inversedBy: 'livres')]
     private Collection $genre;
 
     public function __construct()
@@ -146,7 +146,6 @@ class Livre
     {
         if (!$this->genre->contains($genre)) {
             $this->genre->add($genre);
-            $genre->setLivre($this);
         }
 
         return $this;
@@ -154,14 +153,11 @@ class Livre
 
     public function removeGenre(Genre $genre): static
     {
-        if ($this->genre->removeElement($genre)) {
-            // set the owning side to null (unless already changed)
-            if ($genre->getLivre() === $this) {
-                $genre->setLivre(null);
-            }
-        }
+        $this->genre->removeElement($genre);
 
         return $this;
     }
+
+ 
 
 }

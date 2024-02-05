@@ -30,7 +30,7 @@ services:
   mailer:
     image: schickling/mailcatcher
     container_name: sfcdi_mailcatcher
-    ports: ["1026:1025","1081:1080"]
+    ports: ["1025:1025","1080:1080"]
 
 volumes:
   dbdata:
