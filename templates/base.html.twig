@@ -13,9 +13,12 @@
     </head>
     <body>
         {% block header %}
+<a href="{{ path('app_home') }}">CDI</a>
+
         <header>
             {% include "partials/_nav_header.html.twig" %}
-            </header>
+</header>
+
         {% endblock %}
 
         {% block body %}{% endblock %}
