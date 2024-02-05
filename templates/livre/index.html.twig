@@ -36,6 +36,9 @@
                     <a href="{{ path('app_livre_edit', {'id': livre.id}) }}">edit</a>
                 </td>
             </tr>
+            <tr>
+            {{ knp_pagination_render(livres) }}
+            </tr>
         {% else %}
             <tr>
                 <td colspan="9">no records found</td>
