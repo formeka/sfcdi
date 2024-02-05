@@ -2,7 +2,7 @@ services:
 
   mariadb:
     image: mariadb:lts
-    container_name: mariadb
+    container_name: sfcdi_mariadb
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: root
@@ -10,6 +10,27 @@ services:
       - 3306:3306
     volumes:
       - dbdata:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: sfcdi_pma
+    restart: always
+    environment:
+      - PMA_ARBITRARY=1
+    ports:
+      - 8005:80
+
+  adminer:
+    image: adminer
+    container_name: sfcdi_adminer
+    restart: always
+    ports:
+      - 8006:8080
+
+  mailer:
+    image: schickling/mailcatcher
+    container_name: sfcdi_mailcatcher
+    ports: ["1026:1025","1081:1080"]
 
 volumes:
   dbdata:
