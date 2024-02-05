@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Genre;
 use App\Entity\Livre;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,10 +20,17 @@ class LivreType extends AbstractType
             ->add('auteur')
             ->add('isbn')
             ->add('date_publication')
-        ->add('resume')
-            ->add('genre')
+            ->add('resume')
+            ->add('genre', EntityType::class, [
+                'class' => Genre::class,
+                'choice_label' => 'nom',
+                'multiple' => true,
+                'expanded' => true,
+            ])
             ->add('image', FileType::class, [
-                'label' => 'Couverture de livre : '
+                'label' => 'Couverture de livre : ',
+                'mapped' => true,
+                'required' => false
             ])
         ;
     }
