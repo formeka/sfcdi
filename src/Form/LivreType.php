@@ -29,7 +29,7 @@ class LivreType extends AbstractType
             ])
             ->add('image', FileType::class, [
                 'label' => 'Couverture de livre : ',
-                'mapped' => true,
+                'mapped' => false,
                 'required' => false
             ])
         ;
