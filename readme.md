@@ -64,6 +64,10 @@ Installer : `composer require jawira/doctrine-diagram-bundle --dev`
 
 Génerer un diagram : `symfony console doctrine:diagram`
 
+# Pagination
+
+Installer : `composer require knplabs/knp-paginator-bundle`
+
 ---
 
 # FOAD Symfony

@@ -25,6 +25,8 @@
 
  {% endfor %}
 
+ {{ knp_pagination_render(livres) }}
+
 {% else %}
     <p>Aucun livre dans le CDI !</p>
 {% endif %}

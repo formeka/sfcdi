@@ -5,3 +5,45 @@ body {
 img {
     width: 200px;
 }
+
+.btn , button {
+    text-decoration: none;
+    color: blue;
+    padding: 0.2rem 0.5rem;
+    border:solid 1px blue;
+    margin: 0.5rem 0;
+  }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    padding: 0 0 1rem 0;
+    border-bottom: solid 1px black;
+    text-align: left;
+}
+
+table td {
+    padding: 0.8rem 0;
+}
+
+table tr {
+    text-align: left;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+form div  {
+    margin: 1rem 0;
+    border-bottom: solid 1px black;
+    padding: 1rem 0
+  }
+  
+  form label {
+    margin: 0 1rem 0 0;
+    font-weight: bold;
+  }

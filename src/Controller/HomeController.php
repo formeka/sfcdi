@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Repository\LivreRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
@@ -11,10 +13,21 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(LivreRepository $livreRepository): Response
+    public function index(
+        LivreRepository $livreRepository,
+        PaginatorInterface $paginator,
+        Request $request
+        ): Response
     {
+        
+        $livres_pagination = $paginator->paginate(
+            $livreRepository->findBy([],['id' => 'DESC']),
+            $request->query->getInt('page',1),
+            3
+        );
+
         return $this->render('home/index.html.twig',[
-            'livres' => $livreRepository->findBy([],['id' => 'DESC'])
+            'livres' => $livres_pagination
         ]);
     }
 

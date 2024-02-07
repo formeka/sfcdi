@@ -7,11 +7,8 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ livre.id }}</td>
-            </tr>
-            <tr>
+<tr></tr>
+
                 <th>Titre</th>
                 <td>{{ livre.titre }}</td>
             </tr>
@@ -33,7 +30,14 @@
             </tr>
             <tr>
                 <th>Image</th>
-                <td><img src="{{ asset('/uploads/images/livres/' ~ livre.image ) }}" alt=""></td>
+<td>
+	{% if 'https://' in 'main ' ~ livre.image  %}
+		<img src="{{ livre.image }}" alt="{{ livre.titre }}">
+	{% else %}
+		<img src="{{ asset('uploads/images/livres/' ~ livre.image ) }}" alt="{{ livre.titre }}">
+	{% endif %}
+</td>
+
             </tr>
             <tr>
                 <th>Resume</th>
@@ -42,9 +46,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_livre_index') }}">back to list</a>
+    <a href="{{ path('app_livre_index') }}" class="btn">Retour à la liste des livres</a>
 
-    <a href="{{ path('app_livre_edit', {'id': livre.id}) }}">edit</a>
+    <a href="{{ path('app_livre_edit', {'id': livre.id}) }}" class="btn">Modifier</a>
 
     {{ include('livre/_delete_form.html.twig') }}
 {% endblock %}

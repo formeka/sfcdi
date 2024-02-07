@@ -3,7 +3,7 @@
 {% block title %}Livre index{% endblock %}
 
 {% block body %}
-    <h1>Livre index</h1>
+<h1 class="txt-center">Catalogue Livres</h1>
 
 {% for messages in app.flashes %}
 	{% for message in messages %}
@@ -12,6 +12,10 @@
 		</div>
 	{% endfor %}
 {% endfor %}
+
+<p>
+	<a href="{{ path('app_livre_new') }}" class="btn">Ajouter un livre</a>
+</p>
 
 
     <table class="table">
@@ -32,17 +36,24 @@
                 <td>{{ livre.auteur }}</td>
                 <td>{{ livre.datePublication ? livre.datePublication|date('Y-m-d') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_livre_show', {'id': livre.id}) }}">show</a>
-                    <a href="{{ path('app_livre_edit', {'id': livre.id}) }}">edit</a>
+<a href="{{ path('app_livre_show', {'id': livre.id}) }}" class="btn">Voir</a>
+<a href="{{ path('app_livre_edit', {'id': livre.id}) }}" class="btn">Modifier</a>
+
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+<td colspan="9">Aucun livres !</td>
+
             </tr>
         {% endfor %}
         </tbody>
     </table>
+{{ knp_pagination_render(livres) }}
 
-    <a href="{{ path('app_livre_new') }}">Create new</a>
+
+<p>
+	<a href="{{ path('app_livre_new') }}" class="btn">Ajouter un livre</a>
+</p>
+
 {% endblock %}
