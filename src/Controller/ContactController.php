@@ -23,11 +23,13 @@ class ContactController extends AbstractController
             $contactData = $formContact->getData();
 
             $email = (new Email())
-                // ->from('contact@cdi.fr')
+                ->from('contact@cdi.fr')
                 ->to($contactData['email'])
                 ->subject($contactData['sujet'])
                 ->text($contactData['message'])
                 ->html('<p>' . $contactData['message'] . '</p>');
+
+            dd($email);
 
             $mailer->send($email);
 
