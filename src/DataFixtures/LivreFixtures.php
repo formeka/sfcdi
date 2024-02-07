@@ -16,7 +16,7 @@ class LivreFixtures extends Fixture
         $faker = Factory::create('fr_FR');
 
         $genres = [];
-        for ($i = 0; $i <= 10; $i++) :
+        for ($i = 0; $i<= 10; $i++) :
             $genre = new Genre();
 
             $genre->setNom($faker->word())
@@ -38,13 +38,13 @@ class LivreFixtures extends Fixture
             ->setImage($faker->imageUrl())
             ->setResume($faker->paragraph());
 
-            for($k=0 ; $k < mt_rand(1, 10); $k++) :
+            for($k=0 ; $k < mt_rand(1, 3); $k++) :
                 $livre->addGenre($genres[mt_rand(0, count($genres) - 1)]);
             endfor;   
 
             $manager->persist($livre);
         endfor;
 
-        $manager->flush();
+       $manager->flush();
     }
 }

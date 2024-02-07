@@ -38,6 +38,6 @@ class EtudiantFixtures extends Fixture
         ->setRoles(['ROLE_USER']);
         $manager->persist($user2);
 
-        $manager->flush();
+        //$manager->flush();
     }
 }

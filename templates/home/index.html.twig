@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>Livres disponibles</h1>
 {% if livres %}
+<h1>Livres disponibles</h1>
 
  {% for livre in livres %}
 
@@ -15,6 +15,15 @@
     <p>{{ livre.titre }}</p>
     <p><strong>Auteur</strong> : {{ livre.auteur }}</p>
     <p><strong>Editeur</strong> : {{ livre.editeur }}</p>
+<p>
+	<strong>Collection </strong> :
+	:
+	{% for genre in livre.genre %}
+		<span>{{ genre.nom }}</span>
+	{% endfor %}
+</p>
+
+
 
  {% endfor %}
 
