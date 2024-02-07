@@ -5,11 +5,11 @@ services:
     container_name: sfcdi_mariadb
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: root
+      MARIADB_ROOT_PASSWORD: symfony
     ports:
       - 3306:3306
     volumes:
-      - dbdata:/var/lib/mysql
+      - sfcdidbdata:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin
@@ -30,7 +30,7 @@ services:
   mailer:
     image: schickling/mailcatcher
     container_name: sfcdi_mailcatcher
-    ports: ["1026:1025","1081:1080"]
+    ports: ["1025:1025","1080:1080"]
 
 volumes:
-  dbdata:
+  sfcdidbdata:
