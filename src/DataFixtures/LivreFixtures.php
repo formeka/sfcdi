@@ -14,11 +14,17 @@ class LivreFixtures extends Fixture
 
         $faker = Factory::create('fr_FR');
         
-        for($j=0 ; $j<= 5 ; $j++):
+        for($j=0 ; $j<= 50 ; $j++):
             $livre = new Livre();
 
-            $livre->setTitre($faker->words())
-            ->setEditeur($faker->sentence());
+            $livre->setTitre($faker->sentence())
+            ->setEditeur($faker->word())
+            ->setAuteur($faker->name())
+            ->setIsbn($faker->isbn10())
+            ->setDatePublication($faker->dateTimeThisDecade())
+            ->setImage($faker->imageUrl())
+            ->setResume($faker->paragraph())
+            ;
 
             $manager->persist($livre);
         endfor;

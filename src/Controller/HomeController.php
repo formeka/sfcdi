@@ -14,7 +14,7 @@ class HomeController extends AbstractController
     public function index(LivreRepository $livreRepository): Response
     {
         return $this->render('home/index.html.twig',[
-            'livres' => $livreRepository->findAll()
+            'livres' => $livreRepository->findBy([],['id' => 'DESC'])
         ]);
     }
 
