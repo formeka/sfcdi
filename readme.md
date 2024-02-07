@@ -56,6 +56,14 @@ Ajouter des **fixtures** sans vider la table **livre** :  `symfony console doctr
 symfony console make:entity
 enttité : Livre
 nouveaux champ de relation : genre
+```
+
+# Diagram
+
+Installer : `composer require jawira/doctrine-diagram-bundle --dev`
+
+Génerer un diagram : `symfony console doctrine:diagram`
+
 ---
 
 # FOAD Symfony
