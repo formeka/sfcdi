@@ -4,23 +4,22 @@
 <h1>Livres disponibles</h1>
 {% if livres %}
 
-
  {% for livre in livres %}
- 
+
     {% if 'https://' in 'main ' ~ livre.image  %}
-        <p><img src="{{ livre.image }}" alt=""></p>
+        <p><img src="{{ livre.image }}" alt="{{ livre.titre }}"></p>
     {% else %}
-        <p><img src="{{ asset('uploads/images/livres/' ~ livre.image ) }}" alt=""></p>
+        <p><img src="{{ asset('uploads/images/livres/' ~ livre.image ) }}" alt="{{ livre.titre }}"></p>
     {% endif %}
 
-
-    <p>{{ livre.auteur }}</p>
     <p>{{ livre.titre }}</p>
-    <p>{{ livre.editeur }}</p>
+    <p><strong>Auteur</strong> : {{ livre.auteur }}</p>
+    <p><strong>Editeur</strong> : {{ livre.editeur }}</p>
 
  {% endfor %}
-{% else %}
-<p>Aucun livre dans le CDI !</p>{% endif %}
 
+{% else %}
+    <p>Aucun livre dans le CDI !</p>
+{% endif %}
 
 {% endblock %}
